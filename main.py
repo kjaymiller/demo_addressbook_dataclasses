@@ -13,7 +13,7 @@ MS_Python = addressbook.Team(
 
 def get_twitter_accounts_to_follow(team: addressbook.Team):
     """return a list of all the team members twitter accounts"""
-    return "\n".join([member.get_twitter_url for member in team.members])
+    return "\n".join([member.get_twitter_url() for member in team.members])
 
 
 if __name__ == "__main__":
