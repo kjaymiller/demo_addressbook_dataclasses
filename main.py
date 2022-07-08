@@ -1,23 +1,20 @@
 import addressbook
-from faker import Faker
 
-def build_addressbook(*contacts, owner):
-    """Build an address book with the given contacts"""
-    pass
+jay = addressbook.Person(name="Jay", twitter="@kjaymiller")
+nina = addressbook.Person(name="Nina", twitter="@nnja")
+anthony = addressbook.Person(name="Anthony", twitter="@anthonypjshaw")
+sarah = addressbook.Person(name="Sarah", twitter="@crazy4pi314")
+pamela = addressbook.Person(name="Pamela", twitter="@pamelafox")
+
+MS_Python = addressbook.Team(
+    name = "Team Python",
+    members = [jay, sarah, nina, anthony, pamela]
+)
+
+def get_twitter_accounts_to_follow(team: addressbook.Team):
+    """return a list of all the team members twitter accounts"""
+    return "\n".join([member.get_twitter_url for member in team.members])
+
 
 if __name__ == "__main__":
-    fake = Faker()
-    name = fake.name() 
-    phone = fake.phone_number()
-    address = fake.address()
-    notes = fake.text()
-    website = fake.url()
-    contact = addressbook.Person(
-        name=name,
-        phone=phone,
-        address=address,
-        notes=notes,
-        website=website,
-    )
-    
-    addressbook.AddressBook
+    print(get_twitter_accounts_to_follow(MS_Python))
