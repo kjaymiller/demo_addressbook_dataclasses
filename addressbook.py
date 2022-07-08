@@ -56,7 +56,7 @@ class Person(BaseContact):
 class Team:
     """An individual team"""
     name: str
-    personnel: list['Team', Person] = dataclasses.field(default_factory=list)
+    members: list['Team', Person] = dataclasses.field(default_factory=list)
 
     def __str__(self):
         """Return the team name"""
