@@ -1,3 +1,4 @@
 *pycache*
 .direnv
 .envrc
+.tool-versions
